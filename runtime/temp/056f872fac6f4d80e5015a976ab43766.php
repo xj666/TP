@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:78:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/channel\index.html";i:1496373782;s:76:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:78:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/channel\index.html";i:1506752893;s:76:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
 <!doctype html>
 <html>
 <head>
@@ -105,7 +105,7 @@
 	</div>
 
 	<div class="cf">
-		<a class="btn" href="<?php echo url('add','pid='.$pid); ?>">新 增</a>
+		<a class="btn" href="<?php echo url('add'); ?>">新 增</a>
 		<a class="btn" href="javascript:;">删 除</a>
 		<button class="btn list_sort" url="<?php echo url('sort',array('pid'=>input('get.pid',0)),''); ?>">排序</button>
 	</div>

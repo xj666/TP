@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:79:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/property\index.html";i:1506683234;s:76:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:79:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/property\index.html";i:1506761369;s:76:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
 <!doctype html>
 <html>
 <head>
@@ -137,7 +137,7 @@
                         <td><?php echo $property['tel']; ?></td>
                         <td><?php echo $property['address']; ?></td>
                         <td><?php echo $property['problem']; ?></td>
-                        <td><?php echo $property['update_time']; ?></td>
+                        <td><?php echo date('Y-m-d H:i:s',$property['updata_time']); ?></td>
                         <td><?php echo $property['status']; ?></td>
 						<td>
 							<a title="编辑" href="<?php echo url('edit?id='.$property['id'].'&pid='.$pid); ?>">编辑</a>
@@ -150,6 +150,9 @@
 				<?php endif; ?>
 			</tbody>
 		</table>
+		<div class="page">
+			<?php echo $_page; ?>
+		</div>
 	</div>
 
         </div>

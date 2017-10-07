@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:74:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/menu\edit.html";i:1496373782;s:76:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:74:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/menu\edit.html";i:1506664979;s:76:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
 <!doctype html>
 <html>
 <head>
@@ -100,76 +100,76 @@
             
 
             
-    <div class="main-title">
-        <h2><?php echo isset($info['id'])?'编辑':'新增'; ?>后台菜单</h2>
+<div class="main-title">
+    <h2><?php echo isset($info['id'])?'编辑':'新增'; ?>后台菜单</h2>
+</div>
+<form action="<?php echo url(); ?>" method="post" class="form-horizontal">
+    <div class="form-item">
+        <label class="item-label">标题<span class="check-tips">（用于后台显示的配置标题）</span></label>
+        <div class="controls">
+            <input type="text" class="text input-large" name="title" value="<?php echo (isset($info['title']) && ($info['title'] !== '')?$info['title']:''); ?>">
+        </div>
     </div>
-    <form action="<?php echo url(); ?>" method="post" class="form-horizontal">
-        <div class="form-item">
-            <label class="item-label">标题<span class="check-tips">（用于后台显示的配置标题）</span></label>
-            <div class="controls">
-                <input type="text" class="text input-large" name="title" value="<?php echo (isset($info['title']) && ($info['title'] !== '')?$info['title']:''); ?>">
-            </div>
+    <div class="form-item">
+        <label class="item-label">排序<span class="check-tips">（用于分组显示的顺序）</span></label>
+        <div class="controls">
+            <input type="text" class="text input-small" name="sort" value="<?php echo (isset($info['sort']) && ($info['sort'] !== '')?$info['sort']:0); ?>">
         </div>
-        <div class="form-item">
-            <label class="item-label">排序<span class="check-tips">（用于分组显示的顺序）</span></label>
-            <div class="controls">
-                <input type="text" class="text input-small" name="sort" value="<?php echo (isset($info['sort']) && ($info['sort'] !== '')?$info['sort']:0); ?>">
-            </div>
+    </div>
+    <!--<div class="form-item">-->
+    <!--<label class="item-label">模块<span class="check-tips">（所属模块）</span></label>-->
+    <!--<div class="controls">-->
+    <!--<input type="text" class="text input-large" name="module" value="<?php echo (isset($info['module']) && ($info['module'] !== '')?$info['module']:'admin'); ?>">-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class="form-item">
+        <label class="item-label">链接<span class="check-tips">（U函数解析的URL或者外链）</span></label>
+        <div class="controls">
+            <input type="text" class="text input-large" name="url" value="<?php echo (isset($info['url']) && ($info['url'] !== '')?$info['url']:''); ?>">
         </div>
-        <!--<div class="form-item">-->
-            <!--<label class="item-label">模块<span class="check-tips">（所属模块）</span></label>-->
-            <!--<div class="controls">-->
-                <!--<input type="text" class="text input-large" name="module" value="<?php echo (isset($info['module']) && ($info['module'] !== '')?$info['module']:'admin'); ?>">-->
-            <!--</div>-->
-        <!--</div>-->
-        <div class="form-item">
-            <label class="item-label">链接<span class="check-tips">（U函数解析的URL或者外链）</span></label>
-            <div class="controls">
-                <input type="text" class="text input-large" name="url" value="<?php echo (isset($info['url']) && ($info['url'] !== '')?$info['url']:''); ?>">
-            </div>
+    </div>
+    <div class="form-item">
+        <label class="item-label">上级菜单<span class="check-tips">（所属的上级菜单）</span></label>
+        <div class="controls">
+            <select name="pid">
+                <?php if(is_array($Menus) || $Menus instanceof \think\Collection || $Menus instanceof \think\Paginator): $i = 0; $__LIST__ = $Menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?>
+                <option value="<?php echo $menu['id']; ?>"><?php echo $menu['title_show']; ?></option>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+            </select>
         </div>
-        <div class="form-item">
-            <label class="item-label">上级菜单<span class="check-tips">（所属的上级菜单）</span></label>
-            <div class="controls">
-                <select name="pid">
-                    <?php if(is_array($Menus) || $Menus instanceof \think\Collection || $Menus instanceof \think\Paginator): $i = 0; $__LIST__ = $Menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?>
-                        <option value="<?php echo $menu['id']; ?>"><?php echo $menu['title_show']; ?></option>
-                    <?php endforeach; endif; else: echo "" ;endif; ?>
-                </select>
-            </div>
+    </div>
+    <div class="form-item">
+        <label class="item-label">分组<span class="check-tips">（用于左侧分组二级菜单）</span></label>
+        <div class="controls">
+            <input type="text" class="text input-large" name="group" value="<?php echo (isset($info['group']) && ($info['group'] !== '')?$info['group']:''); ?>">
         </div>
-        <div class="form-item">
-            <label class="item-label">分组<span class="check-tips">（用于左侧分组二级菜单）</span></label>
-            <div class="controls">
-                <input type="text" class="text input-large" name="group" value="<?php echo (isset($info['group']) && ($info['group'] !== '')?$info['group']:''); ?>">
-            </div>
+    </div>
+    <div class="form-item">
+        <label class="item-label">是否隐藏<span class="check-tips"></span></label>
+        <div class="controls">
+            <label class="radio"><input type="radio" name="hide" value="1">是</label>
+            <label class="radio"><input type="radio" name="hide" value="0">否</label>
         </div>
-        <div class="form-item">
-            <label class="item-label">是否隐藏<span class="check-tips"></span></label>
-            <div class="controls">
-                <label class="radio"><input type="radio" name="hide" value="1">是</label>
-                <label class="radio"><input type="radio" name="hide" value="0">否</label>
-            </div>
+    </div>
+    <div class="form-item">
+        <label class="item-label">仅开发者模式可见<span class="check-tips"></span></label>
+        <div class="controls">
+            <label class="radio"><input type="radio" name="is_dev" value="1">是</label>
+            <label class="radio"><input type="radio" name="is_dev" value="0">否</label>
         </div>
-        <div class="form-item">
-            <label class="item-label">仅开发者模式可见<span class="check-tips"></span></label>
-            <div class="controls">
-                <label class="radio"><input type="radio" name="is_dev" value="1">是</label>
-                <label class="radio"><input type="radio" name="is_dev" value="0">否</label>
-            </div>
+    </div>
+    <div class="form-item">
+        <label class="item-label">说明<span class="check-tips">（菜单详细说明）</span></label>
+        <div class="controls">
+            <input type="text" class="text input-large" name="tip" value="<?php echo (isset($info['tip']) && ($info['tip'] !== '')?$info['tip']:''); ?>">
         </div>
-        <div class="form-item">
-            <label class="item-label">说明<span class="check-tips">（菜单详细说明）</span></label>
-            <div class="controls">
-                <input type="text" class="text input-large" name="tip" value="<?php echo (isset($info['tip']) && ($info['tip'] !== '')?$info['tip']:''); ?>">
-            </div>
-        </div>
-        <div class="form-item">
-            <input type="hidden" name="id" value="<?php echo (isset($info['id']) && ($info['id'] !== '')?$info['id']:''); ?>">
-            <button class="btn submit-btn ajax-posts" id="submit" type="submit" target-form="form-horizontal">确 定</button>
-            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
-        </div>
-    </form>
+    </div>
+    <div class="form-item">
+        <input type="hidden" name="id" value="<?php echo (isset($info['id']) && ($info['id'] !== '')?$info['id']:''); ?>">
+        <button class="btn submit-btn ajax-posts" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+        <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+    </div>
+</form>
 
         </div>
         <div class="cont-ft">
@@ -267,13 +267,13 @@
         }
     </script>
     
-    <script type="text/javascript">
-        Think.setValue("pid", <?php echo (isset($info['pid']) && ($info['pid'] !== '')?$info['pid']: 0); ?>);
-        Think.setValue("hide", <?php echo (isset($info['hide']) && ($info['hide'] !== '')?$info['hide']: 0); ?>);
-        Think.setValue("is_dev", <?php echo (isset($info['is_dev']) && ($info['is_dev'] !== '')?$info['is_dev']: 0); ?>);
-        //导航高亮
-        highlight_subnav('<?php echo url('index'); ?>');
-    </script>
+<script type="text/javascript">
+    Think.setValue("pid", <?php echo (isset($info['pid']) && ($info['pid'] !== '')?$info['pid']: 0); ?>);
+    Think.setValue("hide", <?php echo (isset($info['hide']) && ($info['hide'] !== '')?$info['hide']: 0); ?>);
+    Think.setValue("is_dev", <?php echo (isset($info['is_dev']) && ($info['is_dev'] !== '')?$info['is_dev']: 0); ?>);
+    //导航高亮
+    highlight_subnav('<?php echo url('index'); ?>');
+</script>
 
 </body>
 </html>
