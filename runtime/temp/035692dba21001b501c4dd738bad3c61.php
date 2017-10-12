@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\tp\public/../application/home/view/default/index\fuwu.html";i:1507347405;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\tp\public/../application/home/view/default/index\fuwu.html";i:1507444991;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -52,7 +52,7 @@
         <div class="container">
             <ul class="list-group fuwuList">
                 <li class="list-group-item"><a href="diaochawenjuan.html" class="text-danger"><span class="iconfont">&#xe604;</span>调查问卷</a> </li>
-                <li class="list-group-item"><a href="yezhurenzheng.html" class="text-info"><span class="iconfont">&#xe605;</span>业主认证</a></li>
+                <li class="list-group-item"><a href="<?php echo url('owner/add'); ?>" class="text-info"><span class="iconfont">&#xe605;</span>业主认证</a></li>
                 <li class="list-group-item"><a href="#" class="text-success"><span class="iconfont">&#xe602;</span>在线缴费</a></li>
                 <li class="list-group-item"><a href="<?php echo url('life/index'); ?>" class="text-warning"><span class="iconfont">&#xe601;</span>生活贴士</a></li>
                 <li class="list-group-item"><a href="<?php echo url('config/index'); ?>" class="text-primary"><span class="iconfont">&#xe600;</span>关于我们</a></li>

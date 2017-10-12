@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\tp\public/../application/home/view/default/life\index.html";i:1507171214;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -8,8 +9,8 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="/home/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/home/css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,23 +46,22 @@
 
     <div class="container-fluid">
         <!--{notempty name="list"}-->
-        {volist name="list" id="activity"}
+        <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$life): $mod = ($i % 2 );++$i;?>
         <div class="row noticeList">
-            <a href="{:url('details?id='.$activity['id'])}">
+            <a href="<?php echo url('details?id='.$life['id']); ?>">
                 <div class="col-xs-2">
-                    <img class="noticeImg" src="/image/index.png" />
+                    <img class="noticeImg" src="../image/1.png" />
                 </div>
                 <div class="col-xs-10">
-                    <p class="title">{$activity.title}</p>
-                    <p class="intro">{$activity.description}</p>
-                    <p class="info">浏览量:{$activity.view} <span class="pull-right">{$activity.create_time|date="Y-m-d H:i:s",###}</span> </p>
+                    <p class="title"><?php echo $life['title']; ?></p>
+                    <p class="intro"><?php echo $life['description']; ?></p>
+                    <p class="info">浏览量:<?php echo $life['view']; ?> <span class="pull-right"><?php echo date("Y-m-d H:i:s",$life['create_time']); ?></span> </p>
+
                 </div>
-                <img class="noticeImg" src="/image/index.png" />
-        </div>
-                </div>
+
             </a>
         </div>
-        {/volist}
+        <?php endforeach; endif; else: echo "" ;endif; ?>
 
     </div>
 </div>

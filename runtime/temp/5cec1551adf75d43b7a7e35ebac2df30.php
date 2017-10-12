@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"D:\phpStudy\WWW\tp\public/../application/home/view/default/market\index.html";i:1507347331;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"D:\phpStudy\WWW\tp\public/../application/home/view/default/market\index.html";i:1507425324;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -50,7 +50,7 @@
         <div class="row noticeList">
             <a href="<?php echo url('details?id='.$market['id']); ?>">
                 <div class="col-xs-2">
-                    <img class="noticeImg" src="../image/1.png" />
+                    <img class="noticeImg" src="/image/index.png" />
                 </div>
                 <div class="col-xs-10">
                     <p class="title"><?php echo $market['title']; ?></p>

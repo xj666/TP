@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"D:\phpStudy\WWW\tp\public/../application/home/view/default/rental\index.html";i:1507346642;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"D:\phpStudy\WWW\tp\public/../application/home/view/default/rental\index.html";i:1507452694;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -48,8 +48,8 @@
         <div class="blank"></div>
         <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
             <ul id="myTabs" class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">租</a></li>
-                <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">售</a></li>
+                <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">售</a></li>
+                <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">租</a></li>
             </ul>
             <div id="myTabContent" class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
@@ -58,7 +58,7 @@
                         <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$rental): $mod = ($i % 2 );++$i;?>
                         <div class="col-xs-6 col-md-4">
                             <div class="thumbnail">
-                                <img src="../image/2.png" alt="...">
+                                <img src="/image/index.png" alt="...">
                                 <div class="caption">
                                     <h4><?php echo $rental['title']; ?></h4>
                                     <p class="zushouInfo"><?php echo $rental['description']; ?></p>
@@ -69,7 +69,6 @@
                         </div>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
                     </div>
-
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
                     <div class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
@@ -78,7 +77,7 @@
                         <?php if(is_array($rows) || $rows instanceof \think\Collection || $rows instanceof \think\Paginator): $i = 0; $__LIST__ = $rows;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$rental): $mod = ($i % 2 );++$i;?>
                         <div class="col-xs-6 col-md-4">
                             <div class="thumbnail">
-                                <img src="../image/2.png" alt="...">
+                                <img src="/image/index.png" alt="...">
                                 <div class="caption">
                                     <h4><?php echo $rental['title']; ?></h4>
                                     <p class="zushouInfo"><?php echo $rental['description']; ?></p>
@@ -96,8 +95,8 @@
     </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/home./jquery-1.11.2.min.js"></script>
+<script src="/jquery-1.11.2.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/home./bootstrap/js/bootstrap.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

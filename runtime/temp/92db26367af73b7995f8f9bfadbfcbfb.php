@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpStudy\WWW\tp\public/../application/home/view/default/activity\index.html";i:1507346579;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpStudy\WWW\tp\public/../application/home/view/default/activity\index.html";i:1507425207;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -50,14 +50,14 @@
         <div class="row noticeList">
             <a href="<?php echo url('details?id='.$activity['id']); ?>">
                 <div class="col-xs-2">
-                    <img class="noticeImg" src="../image/1.png" />
+                    <img class="noticeImg" src="/image/index.png" />
                 </div>
                 <div class="col-xs-10">
                     <p class="title"><?php echo $activity['title']; ?></p>
                     <p class="intro"><?php echo $activity['description']; ?></p>
                     <p class="info">浏览量:<?php echo $activity['view']; ?> <span class="pull-right"><?php echo date("Y-m-d H:i:s",$activity['create_time']); ?></span> </p>
                 </div>
-                <img class="noticeImg" src="/home/image/1.png" />
+                <img class="noticeImg" src="/image/index.png" />
         </div>
                 </div>
             </a>

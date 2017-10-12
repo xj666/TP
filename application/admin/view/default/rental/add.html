@@ -67,9 +67,9 @@
                     resizeType: 1,
                     pasteType : 2,
                     urlType : 'absolute',
-                    fileManagerJson : '/admin.php/Sale/fileManagerJson.html',
+                    fileManagerJson : '/rental.php/Sale/fileManagerJson.html',
                     //uploadJson : '/admin.php/Sale/uploadJson.html' }
-                    uploadJson : '/admin.php/Addons/execute/_addons/EditorForAdmin/_controller/Upload/_action/ke_upimg.html',
+                    uploadJson : '/rental.php/Addons/execute/_addons/EditorForAdmin/_controller/Upload/_action/ke_upimg.html',
                     extraFileUploadParams: {
                         session_id : 'l73ulcq0704fh7sc8e5e5rtvg3'
                     }
@@ -86,7 +86,12 @@
                     editor_content.sync();
                 });
             })
+
+
         </script>
+
+
+
 
         </label>
     </div>
@@ -115,13 +120,6 @@
             <input type="text" class="text input-small" name="tel" value="{$info.tel|default=''}">
         </div>
     </div>
-    <!--<div class="form-item">-->
-        <!--<label class="item-label">状态<span class="check-tips">（处理状态）</span></label>-->
-        <!--<div class="controls">-->
-            <!--<label class="radio"><input type="radio" name="status" value="1" <?php if($info[status]==1) echo("checked");?>>正常</label>-->
-            <!--<label class="radio"><input type="radio" name="status" value="0" <?php if($info[status]==0) echo("checked");?>>失效</label>-->
-        <!--</div>-->
-    <!--</div>-->
     <div class="form-item">
         <input type="hidden" name="id" value="{$info.id|default=''}">
         <button class="btn submit-btn ajax-posts" id="submit" type="submit" target-form="form-horizontal">确 定</button>

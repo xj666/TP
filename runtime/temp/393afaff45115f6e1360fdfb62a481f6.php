@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpStudy\WWW\tp\public/../application/home/view/default/service\lists.html";i:1507425288;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -44,30 +45,20 @@
     <!--导航结束-->
 
     <div class="container-fluid">
-        <!--{notempty name="list"}-->
-        {volist name="list" id="activity"}
-        <div class="row noticeList">
-            <a href="{:url('details?id='.$activity['id'])}">
-                <div class="col-xs-2">
-                    <img class="noticeImg" src="/image/index.png" />
-                </div>
-                <div class="col-xs-10">
-                    <p class="title">{$activity.title}</p>
-                    <p class="intro">{$activity.description}</p>
-                    <p class="info">浏览量:{$activity.view} <span class="pull-right">{$activity.create_time|date="Y-m-d H:i:s",###}</span> </p>
-                </div>
-                <img class="noticeImg" src="/image/index.png" />
+        <div class="blank"></div>
+        <h3 class="noticeDetailTitle"><strong><?php echo $list['title']; ?></strong></h3>
+        <div class="noticeDetailInfo">发布者:<?php echo $list['name']; ?></div>
+        <div class="noticeDetailInfo">发布时间：<?php echo date("Y-m-d H:i:s",$list['create_time']); ?></div>
+        <div class="noticeDetailContent">
+           <?php echo $list['content']; ?>
         </div>
-                </div>
-            </a>
-        </div>
-        {/volist}
-
+    </div>
+    <img class="noticeImg" src="/image/index.png" />
+</div>
     </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/home/jquery-1.11.2.min.js"></script>
+<script src="/jquery-1.11.2.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/home/bootstrap/js/bootstrap.min.js"></script>
-</body>
+<script src="/bootstrap/js/bootstrap.min.js"></script></body>
 </html>

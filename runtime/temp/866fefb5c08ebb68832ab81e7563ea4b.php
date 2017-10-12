@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpStudy\WWW\tp\public/../application/home/view/default/document\index.html";i:1507347232;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpStudy\WWW\tp\public/../application/home/view/default/document\index.html";i:1507431668;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -7,11 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Bootstrap 101 Template</title>
-
     <!-- Bootstrap -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -43,9 +41,7 @@
         </div>
     </nav>
     <!--导航结束-->
-
     <div class="container-fluid">
-        <!--{notempty name="list"}-->
         <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$document): $mod = ($i % 2 );++$i;?>
             <div class="row noticeList">
                 <a href="<?php echo url('details?id='.$document['id']); ?>">
@@ -60,7 +56,6 @@
                 </a>
             </div>
         <?php endforeach; endif; else: echo "" ;endif; ?>
-
     </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

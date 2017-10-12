@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:75:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/rental\add.html";i:1507452327;s:76:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:73:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/life\add.html";i:1507170621;s:76:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
 <!doctype html>
 <html>
 <head>
@@ -102,7 +102,7 @@
             
 
 <div class="main-title">
-    <h2><?php echo isset($info['id'])?'编辑':'新增'; ?>租售</h2>
+    <h2><?php echo isset($info['id'])?'编辑':'新增'; ?>事故报修</h2>
 </div>
 <form action="<?php echo url(); ?>" method="post" class="form-horizontal">
     <div class="form-item">
@@ -111,44 +111,25 @@
             <input type="text" class="text input-large" name="title" value="<?php echo (isset($info['title']) && ($info['title'] !== '')?$info['title']:''); ?>">
         </div>
     </div>
-
-
-    <div class="form-item">
-        <label class="item-label">发布人<span class="check-tips">（发布人）</span></label>
-        <div class="controls">
-            <input type="text" class="text input-large" name="name" value="<?php echo (isset($info['name']) && ($info['name'] !== '')?$info['name']:''); ?>">
-        </div>
-    </div>
-
-    <div class="form-item">
-        <label class="item-label">价格</label>
-        <div class="controls">
-            <input type="text" class="text input-large" name="price" value="<?php echo (isset($info['price']) && ($info['price'] !== '')?$info['price']:''); ?>">&nbsp;
-            单位：
-            <select style="width: 200px;" name="company">
-                <option value="1"  <?php if($info[company]==1) echo("selected");?>>元/月</option>
-                <option value="2" <?php if($info[company]==2) echo("selected");?>>万元</option>
-            </select>
-        </div>
-    </div>
-
-    <div class="form-item">
-        <label class="item-label">类型</label>
-        <div class="controls">
-            <select style="width: 200px;" name="type" >
-                <option value="1" <?php if($info[type]==1) echo("selected");?>>出租</option>
-                <option value="2" <?php if($info[type]==2) echo("selected");?>>销售</option>
-            </select>
-        </div>
-    </div>
-
     <!--<div class="form-item">-->
     <!--<label class="item-label">模块<span class="check-tips">（所属模块）</span></label>-->
     <!--<div class="controls">-->
     <!--<input type="text" class="text input-large" name="module" value="<?php echo (isset($info['module']) && ($info['module'] !== '')?$info['module']:'admin'); ?>">-->
     <!--</div>-->
     <!--</div>-->
+    <div class="form-item">
+        <label class="item-label">标识<span class="check-tips">（同一根节点下标识不重复）</span></label>
+        <div class="controls">
+            <input type="text" class="text input-large" name="name" value="<?php echo (isset($info['name']) && ($info['name'] !== '')?$info['name']:''); ?>">                    </div>
+    </div>
 
+    <div class="form-item ">
+        <label class="item-label">描述<span class="check-tips"></span></label>
+        <div class="controls">
+            <label class="textarea input-large">
+                <textarea name="description"><?php echo (isset($info['description']) && ($info['description'] !== '')?$info['description']:''); ?></textarea>
+            </label>                    </div>
+    </div>
     <div class="form-item">
 
         <input type="hidden" name="content" value="0">
@@ -166,9 +147,9 @@
                     resizeType: 1,
                     pasteType : 2,
                     urlType : 'absolute',
-                    fileManagerJson : '/rental.php/Sale/fileManagerJson.html',
+                    fileManagerJson : '/admin.php/Sale/fileManagerJson.html',
                     //uploadJson : '/admin.php/Sale/uploadJson.html' }
-                    uploadJson : '/rental.php/Addons/execute/_addons/EditorForAdmin/_controller/Upload/_action/ke_upimg.html',
+                    uploadJson : '/admin.php/Addons/execute/_addons/EditorForAdmin/_controller/Upload/_action/ke_upimg.html',
                     extraFileUploadParams: {
                         session_id : 'l73ulcq0704fh7sc8e5e5rtvg3'
                     }
@@ -185,40 +166,22 @@
                     editor_content.sync();
                 });
             })
-
-
         </script>
-
-
-
 
         </label>
     </div>
-
-    <div class="form-item ">
-        <label class="item-label">描述<span class="check-tips"></span></label>
-        <div class="controls">
-            <label class="textarea input-large">
-                <textarea name="description"><?php echo (isset($info['description']) && ($info['description'] !== '')?$info['description']:''); ?></textarea>
-            </label>                    </div>
-    </div>
-
     <div class="form-item">
         <label class="item-label">详情<span class="check-tips">（活动详情）</span></label>
         <textarea name="content" rows="8" cols="50"><?php echo (isset($info['content']) && ($info['content'] !== '')?$info['content']:''); ?></textarea>
     </div>
     <div class="form-item">
-        <label class="item-label">截止日期<span class="check-tips"></span></label>
+        <label class="item-label">浏览量<span class="check-tips"></span></label>
         <div class="controls">
-            <input type="text" class="text input-mid" name="end_time" value="<?php echo (isset($info['end_time']) && ($info['end_time'] !== '')?$info['end_time']:''); ?>">                    </div>
+            <input type="text" class="text input-mid" name="view" value="<?php echo (isset($info['view']) && ($info['view'] !== '')?$info['view']:'0'); ?>">                    </div>
     </div>
 
-    <div class="form-item">
-        <label class="item-label">电话<span class="check-tips">（联系电话）</span></label>
-        <div class="controls">
-            <input type="text" class="text input-small" name="tel" value="<?php echo (isset($info['tel']) && ($info['tel'] !== '')?$info['tel']:''); ?>">
-        </div>
-    </div>
+
+
     <div class="form-item">
         <input type="hidden" name="id" value="<?php echo (isset($info['id']) && ($info['id'] !== '')?$info['id']:''); ?>">
         <button class="btn submit-btn ajax-posts" id="submit" type="submit" target-form="form-horizontal">确 定</button>

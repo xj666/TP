@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpStudy\WWW\tp\public/../application/home/view/default/service\index.html";i:1507347284;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpStudy\WWW\tp\public/../application/home/view/default/service\index.html";i:1507425288;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -49,7 +49,7 @@
         <div class="row noticeList">
             <a href="<?php echo url('lists?id='.$service['id']); ?>">
                 <div class="col-xs-2">
-                    <img class="noticeImg" src="/home/image/1.png" />
+                    <img class="noticeImg" src="/image/index.png" />
                 </div>
                 <div class="col-xs-10">
                     <p class="title"><?php echo $service['title']; ?></p>

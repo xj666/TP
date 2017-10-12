@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:77:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/repair\index.html";i:1506761439;s:76:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:77:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/repair\index.html";i:1507448935;s:76:"D:\phpStudy\WWW\tp\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
 <!doctype html>
 <html>
 <head>
@@ -140,6 +140,7 @@
             <td><?php echo !empty($repair['status']) && $repair['status']==1?'已处理':'未处理'; ?></td>
 
             <td>
+                <a href="<?php echo url('setStatus?ids='.$repair['id'].'&status='.abs(1-$repair['status'])); ?>" class="ajax-get"><?php echo show_status_op($repair['status']); ?></a>
                 <a title="编辑" href="<?php echo url('edit?id='.$repair['id'].'&pid='.$pid); ?>">编辑</a>
                 <a class="confirm ajax-get" title="删除" href="<?php echo url('del?id='.$repair['id']); ?>">删除</a>
             </td>
